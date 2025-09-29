@@ -2,5 +2,8 @@
 
 void Swap(char *left, char *right)
 {
-	// ваш код здесь
+	char swap =  *left;
+	*left = *right;
+	*right = swap;
 }
+
