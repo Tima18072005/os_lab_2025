@@ -1,10 +1,6 @@
 #include "find_min_max.h"
 #include <limits.h>
 
-struct MinMax {
-    int min;
-    int max;
-};
 
 struct MinMax GetMinMax(int *array, unsigned int begin, unsigned int end) {
     struct MinMax min_max;
@@ -16,7 +12,7 @@ struct MinMax GetMinMax(int *array, unsigned int begin, unsigned int end) {
         return min_max;
     }
     
-    // Инициализация как вы предложили
+    
     min_max.min = array[begin];      // первый элемент как минимальный
     min_max.max = array[end - 1];    // последний элемент как максимальный
     
