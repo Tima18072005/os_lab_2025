@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-I.
 
 # Сборка всех программ
-all: parallel_min_max_timeout zombie_demonstration
+all: parallel_min_max_timeout zombie_demonstration process_memory
 
 
 # Параллельная версия  
@@ -13,6 +13,10 @@ parallel_min_max_timeout: parallel_min_max.c utils.o find_min_max.o
 zombie_demonstration: zombie_demonstration.c
 	$(CC) -o zombie_demonstration zombie_demonstration.c $(CFLAGS)
 
+# Демонстрация расположения данных в виртуальной памяти
+process_memory: process_memory.c
+	$(CC) -o process_memory process_memory.c $(CFLAGS)
+
 # Объектные файлы
 utils.o: utils.c utils.h
 	$(CC) -o utils.o -c utils.c $(CFLAGS)
@@ -22,7 +26,7 @@ find_min_max.o: find_min_max.c find_min_max.h utils.h
 
 # Очистка
 clean:
-	rm -f utils.o find_min_max.o zombie_demonstration parallel_min_max
+	rm -f utils.o find_min_max.o zombie_demonstration parallel_min_max process_memory
 
 # Объявление псевдо-целей
 .PHONY: all clean.c $(CFLAGS)
