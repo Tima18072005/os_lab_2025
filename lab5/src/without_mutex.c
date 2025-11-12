@@ -14,7 +14,7 @@ int main() {
   pthread_t thread1, thread2;
 
   if (pthread_create(&thread1, NULL, (void *)do_one_thing,
-                          (void *)&common) != 0) {
+			  (void *)&common) != 0) {
     perror("pthread_create");
     exit(1);
   }
@@ -53,7 +53,7 @@ void do_one_thing(int *pnum_times) {
     for (k = 0; k < 500000; k++)
       ;                 /* long cycle */
     *pnum_times = work; /* write back */
-    // pthread_mutex_unlock(&mut);
+	// pthread_mutex_unlock(&mut);
   }
 }
 
